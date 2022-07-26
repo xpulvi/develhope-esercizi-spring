@@ -8,6 +8,7 @@ class Api02ApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
