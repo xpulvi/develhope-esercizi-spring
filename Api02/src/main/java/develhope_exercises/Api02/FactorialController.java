@@ -28,11 +28,12 @@ public class FactorialController {
         return "ciao io sono il delit";
     }
     //--------------------------------fino a qui e da togliere
-    @GetMapping(value = "/echo/num")
-    public String numtRoute() {
+    @GetMapping(value = "/echo/num/{numb}")
+    //come facio a fare passare numb come input da utentr?
+    public String numtRoute(@PathVariable Integer numb) {
 
         int i, fact = 1;
-        int numb = 5;
+
         for (i=1;i<=numb;i++){
             fact=fact*i;
         }
