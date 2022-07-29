@@ -9,13 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.develhope</groupId>
-	<artifactId>Api03</artifactId>
+	<artifactId>Api04</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Api03</name>
+	<name>Api04</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>18</java.version>
-		<maven.compiler.target>16</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
