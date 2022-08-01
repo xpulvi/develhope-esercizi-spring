@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api02")
 public class FactorialController {
-    
+
     @GetMapping(value = "/echo/num/{numb}")
     //come facio a fare passare numb come input da utentr?
     public String numtRoute(@PathVariable Integer numb) {
