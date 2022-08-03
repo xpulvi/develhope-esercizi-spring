@@ -40,7 +40,10 @@ public class CarController {
             return car;
         }
     }
-
+    /*updates the type of a specific Car,
+    identified by id and passing a query param - if not present in the db,
+     returns an empty Car | 
+     */
     @PostUpdate
     public moo(){
 
