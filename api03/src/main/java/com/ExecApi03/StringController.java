@@ -9,17 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/string")
 public class StringController {
 
+    @GetMapping()
+    public String getString(@RequestParam String a, @RequestParam(required = false) String b) {
 
-    @GetMapping("{a},{b}")
-    public String getString(@RequestParam String a, @RequestParam String b){
-
-        if (b == null){
-            return a;
-        }else if (a == true && b == true){
+       if (b != null){
             return a + "  " + b;
-        }
-
-        return a;
+        }else {
+           return a;
+       }
     }
-
 }
+
