@@ -10,9 +10,11 @@ public class MyComponent {
     @Autowired
     private String myComponentName;
 
+    /* a constructor that assigns your name to the instance variable | ok ma non ho capito come se la varibile la vuole cosi myName?*/
+
     public MyComponent(String myComponentName, String myName){
         this.myComponentName = myComponentName;
-         ame = "nic;
+        myName = "nik";
     }
 
     public String getMyComponentName() {
