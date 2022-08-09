@@ -1,10 +1,10 @@
-package co.develhope.diDemo;
+package EInjection;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DiDemoApplicationTests {
+class InjectionApplicationTests {
 
 	@Test
 	void contextLoads() {

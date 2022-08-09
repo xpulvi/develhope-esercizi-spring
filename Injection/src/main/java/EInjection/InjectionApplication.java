@@ -1,13 +1,13 @@
-package co.develhope.diDemo;
+package EInjection;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DiDemoApplication {
+public class InjectionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DiDemoApplication.class, args);
+		SpringApplication.run(InjectionApplication.class, args);
 	}
 
 }
