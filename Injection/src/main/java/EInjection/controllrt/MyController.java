@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class MyController {
+public class MyController extends MyService{
 
     //a private variable MyService
     private MyService myService;
@@ -20,7 +20,10 @@ public class MyController {
     /* a mapping to /getName in order to return the result of the getName() method of the MyService variable
     @pasquale non ho capito come vuole che lo facia.
      */
-    //@GetMapping("/getName")
+    @GetMapping(value = "/getName")
+    public String getName(){
+        return "result of the getName() (class Myservice) " + getMyComponentName();
+    }
 
 
     public MyService getMyService() {

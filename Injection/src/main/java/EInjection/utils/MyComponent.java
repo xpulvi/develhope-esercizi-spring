@@ -1,5 +1,6 @@
 package EInjection.utils;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ public class MyComponent {
     public String myName = "nik";
 
     // a constructor that assigns your name to the instance variable
+    @Autowired
     public MyComponent(String myComponentName , String myName) {
         this.myComponentName = myComponentName;
         this.myName = myName;
