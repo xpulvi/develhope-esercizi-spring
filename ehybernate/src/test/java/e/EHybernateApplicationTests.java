@@ -1,10 +1,10 @@
-package devlhopeexercise.hybernateexercise;
+package e;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HybernateExerciseApplicationTests {
+class EHybernateApplicationTests {
 
 	@Test
 	void contextLoads() {

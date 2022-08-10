@@ -8,11 +8,11 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>devlhope-exercise</groupId>
-	<artifactId>hybernate-exercise</artifactId>
+	<groupId>hybernate</groupId>
+	<artifactId>ehybernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hybernate-exercise</name>
-	<description>Demo project for Spring Boot</description>
+	<name>eHybernate</name>
+	<description>ehybernate</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
