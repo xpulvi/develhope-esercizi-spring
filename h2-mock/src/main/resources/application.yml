@@ -7,6 +7,6 @@ String:
   jpa:
     hibernate:
       ddl-auto: create
-h2:
-  console:
-    enabled: true
+  h2:
+    console:
+      enabled: true

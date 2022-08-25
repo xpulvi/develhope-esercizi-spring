@@ -20,8 +20,8 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private long modelName;
+    private String modelName;
 
-    private long type;
+    private String type;
 
 }
