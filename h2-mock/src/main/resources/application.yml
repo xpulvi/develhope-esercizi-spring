@@ -2,8 +2,8 @@
 String:
   datasuorce:
     url: jdbc:h2:mem:testdb
-    username: test
-    password:
+    username: testdb
+    password: psw1234
   jpa:
     hibernate:
       ddl-auto: create
