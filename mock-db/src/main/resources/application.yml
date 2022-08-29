@@ -1,6 +1,5 @@
-
-String:
-  datasuorce:
+spring:
+  datasource:
     url: jdbc:h2:mem:testdb
     username: testdb
     password: psw1234
