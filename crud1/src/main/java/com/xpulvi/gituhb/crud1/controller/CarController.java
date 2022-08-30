@@ -3,9 +3,10 @@ package com.xpulvi.gituhb.crud1.controller;
 import com.xpulvi.gituhb.crud1.entitis.Car;
 import com.xpulvi.gituhb.crud1.repository.CarIRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.PostUpdate;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -45,9 +46,32 @@ public class CarController {
      returns an empty Car | 
      */
     @PutMapping("/{id}")
-    public moo(){
-
+    public Car carUpdate(@PathVariable Long id, @RequestParam String type){
+        Car car;
+        if(carIRepository.existsById(id)){
+            car = carIRepository.getReferenceById(id);
+            car.setType(type);
+            car = carIRepository.saveAndFlush(car);
+        }else{
+            car = new Car();
+        }
+        System.out.println("empty Car");
+        return car;
     }
 
+    @DeleteMapping("/id")
+    public void  deleteCar(@PathVariable Long id, HttpServletResponse response){
+        if(carIRepository.existsById(id)){
+           carIRepository.deleteById(id);
+            System.out.println("Car delete");
+        }else{
+            response.setStatus(HttpServletResponse.SC_CONFLICT);
+    }
+    }
+
+    @DeleteMapping("")
+    public void  deleteAllCars(){
+        carIRepository.deleteAll();
+    }
 
 }
