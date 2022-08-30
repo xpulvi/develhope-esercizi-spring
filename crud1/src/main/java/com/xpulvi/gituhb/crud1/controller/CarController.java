@@ -44,7 +44,7 @@ public class CarController {
     identified by id and passing a query param - if not present in the db,
      returns an empty Car | 
      */
-    @PostUpdate
+    @PutMapping("/{id}")
     public moo(){
 
     }
