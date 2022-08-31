@@ -17,14 +17,14 @@ public class CarController {
     private CarIRepository carIRepository;
 
     // create a new Car | salva su db
-    @PostMapping
+    @PostMapping("")
     public Car car(@RequestBody Car car){
         Car carSave = carIRepository.saveAndFlush(car);
         return carSave;
     }
 
     //return a list of all the Cars | list auto
-    @GetMapping
+    @GetMapping("")
     public List<Car> get(){
         List<Car> carList = carIRepository.findAll();
         return carList;
