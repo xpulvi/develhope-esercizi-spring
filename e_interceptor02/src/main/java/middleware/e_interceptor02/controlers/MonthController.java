@@ -12,12 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 public class MonthController {
 
     @GetMapping("")
-    public Month getMonth(HttpServletRequest request{
-        /* @Pasquale non credo di aver capito
-         returns a Month using a specific request attribute
-         */
-        Month month = (Month) request.getAttribute("month");
-        return month;
+    public Month getMonth(HttpServletRequest request){
+
+        return (Month) request.getAttribute("month");
 
     }
 }

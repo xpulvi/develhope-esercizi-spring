@@ -16,8 +16,7 @@ public class LegacyIntercepotr implements HandlerInterceptor {
             new Exception("This endpoint is blocked");
             return false;
         }
-        /* @Pasuqale
-         fa la richiesta che mi e statta chiesta. ma non mi piace molto il modo in qui lo risolto  */
+
         return true;
     }
 
