@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+welcomeMsg: Hello form default
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+welcomeMsg: Hello from Test
+
+server:
+  port: 4000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+welcomeMsg: Hello form Prod
+
+server:
+  port: 5000
+
+
+
