@@ -1,6 +1,5 @@
 package middleware.e_interceptor02.configurations;
 
-import middleware.e_interceptor02.controlers.MonthController;
 import middleware.e_interceptor02.interseptor.MonthInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
