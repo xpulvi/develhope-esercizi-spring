@@ -7,10 +7,13 @@ import com.Email01.student.service.StudentServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/notificatioon")
@@ -23,7 +26,7 @@ public class NotificationController {
     private EmailServices emailServices;
 
     @PostMapping("/student")
-    public ResponseEntity sendNotification(@RequestBody NotificationDto payload){
+    public ResponseEntity sendNotification(@RequestBody @Valid NotificationDto payload){
         try {
             //prendiamo lutente dal data base
             Student studentToSendNotification = studentServices.getStudentById(payload.getUserId());
