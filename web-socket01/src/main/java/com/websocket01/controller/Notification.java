@@ -1,5 +1,6 @@
 package com.websocket01.controller;
 
+import com.websocket01.entities.MessageDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class Notification {
     private SimpMessagingTemplate simpMessagingTemplate;
 
     @PostMapping("/broadcast-message")
-    public ResponseEntity sendNotificationToClients(@RequestBody SimpleMessageDTO message){
+    public ResponseEntity sendNotificationToClients(@RequestBody MessageDto message){
         simpMessagingTemplate.convertAndSend("/topic/messages", message);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
