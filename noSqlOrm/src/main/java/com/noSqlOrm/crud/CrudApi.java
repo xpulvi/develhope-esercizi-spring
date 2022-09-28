@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CrudApi {
@@ -21,21 +23,34 @@ public class CrudApi {
         return sevedUser;
     }
 
+    //list user
+    @GetMapping
+    public List<UserEntity> getUsers(){
+        return userRepository.findAll();
+    }
+
     //update
     @PutMapping("/{id}")
     public UserEntity carUpdate(@PathVariable Long id, @RequestParam String name){
-        UserEntity user;
-        if(userRepository.existsById(id)){
-            user = userRepository.getId(id);
-            user.setName(name);
-            user = userRepository.save(user);
-        }else{
-            user = new UserEntity();
-        }
-        System.out.println("empty user");
-        return user;
-    }
+        Optional<UserEntity> user;
 
+            user = userRepository.findById(id);
+            if (user.isPresent()){
+                user.get().setName(name);
+                userRepository.save(user.get());
+                return user.get();
+            }else {
+                System.out.println("user is empti");
+                return null;
+            }
+
+
+
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable Long id){ userRepository.deleteById(id); }
+
+    /* @Pasquale non capisco perche non mi pernde response
     //delate
     @DeleteMapping("/id")
     public void delateUser(@PathVariable Long id, HttpServletResponse response){
@@ -45,6 +60,6 @@ public class CrudApi {
         } else {
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
-    }
+    } */
 
 }
