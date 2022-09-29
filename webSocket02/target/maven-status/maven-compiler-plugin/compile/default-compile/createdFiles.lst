@@ -1,0 +1,5 @@
+co\develhope\WebSocket2\WebSocket2Application.class
+co\develhope\WebSocket2\dto\MessageDto.class
+co\develhope\WebSocket2\configurations\WebSocketConfig.class
+co\develhope\WebSocket2\controllers\MessageController.class
+co\develhope\WebSocket2\dto\ClientMessageDto.class

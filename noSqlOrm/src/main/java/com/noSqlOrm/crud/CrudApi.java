@@ -46,9 +46,19 @@ public class CrudApi {
 
 
 
-
-    @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id){ userRepository.deleteById(id); }
+        @DeleteMapping("/{id}")
+        public void deleteUser(@PathVariable Long id){
+            userRepository.deleteById(id);
+        }
+         /*
+    @DeleteMapping("/id")
+    public void deleteUser(@PathVariable Long id)throw Exception {
+                if (!userRepository.existsById(id)) throw new Exception("User not found"){
+                    userRepository.deleteById(id);
+                }else {
+                    System.out.println("User not found");
+                }
+        }  */
 
     /* @Pasquale non capisco perche non mi pernde response
     //delate
@@ -62,4 +72,5 @@ public class CrudApi {
         }
     } */
 
+    }
 }
