@@ -31,29 +31,30 @@ public class CrudApi {
 
     //update
     @PutMapping("/{id}")
-    public UserEntity carUpdate(@PathVariable Long id, @RequestParam String name){
+    public UserEntity carUpdate(@PathVariable Long id, @RequestParam String name) {
         Optional<UserEntity> user;
 
-            user = userRepository.findById(id);
-            if (user.isPresent()){
-                user.get().setName(name);
-                userRepository.save(user.get());
-                return user.get();
-            }else {
-                System.out.println("user is empti");
-                return null;
-            }
+        user = userRepository.findById(id);
+        if (user.isPresent()) {
+            user.get().setName(name);
+            userRepository.save(user.get());
+            return user.get();
+        } else {
+            System.out.println("user is empti");
+            return null;
+        }
 
 
-
+    }
         @DeleteMapping("/{id}")
-        public void deleteUser(@PathVariable Long id){
+        public void deleteUser(@PathVariable Long id) throws Exception {
+        if (userRepository.existsById(id)) throw new Exception("not preset user");
             userRepository.deleteById(id);
         }
-         /*
+      /*
     @DeleteMapping("/id")
-    public void deleteUser(@PathVariable Long id)throw Exception {
-                if (!userRepository.existsById(id)) throw new Exception("User not found"){
+    public void deleteUser(@PathVariable Long id) {
+                if (userRepository.existsById(id)) throw new Exception("User not found"){
                     userRepository.deleteById(id);
                 }else {
                     System.out.println("User not found");
@@ -73,4 +74,4 @@ public class CrudApi {
     } */
 
     }
-}
+
