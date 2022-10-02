@@ -1,0 +1,16 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+
+logging:
+  level:
+    root: info
+    dev:
+      dmgiangi:
+        logging:
+          services: debug
+
+pow:
+  base: 5
+  exponent: 5
