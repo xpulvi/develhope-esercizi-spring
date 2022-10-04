@@ -43,25 +43,8 @@ public class CrudApi {
             System.out.println("user is empti");
             return null;
         }
-
-
     }
-        @DeleteMapping("/{id}")
-        public void deleteUser(@PathVariable Long id) throws Exception {
-        if (userRepository.existsById(id)) throw new Exception("not preset user");
-            userRepository.deleteById(id);
-        }
-      /*
-    @DeleteMapping("/id")
-    public void deleteUser(@PathVariable Long id) {
-                if (userRepository.existsById(id)) throw new Exception("User not found"){
-                    userRepository.deleteById(id);
-                }else {
-                    System.out.println("User not found");
-                }
-        }  */
 
-    /* @Pasquale non capisco perche non mi pernde response
     //delate
     @DeleteMapping("/id")
     public void delateUser(@PathVariable Long id, HttpServletResponse response){
@@ -71,7 +54,7 @@ public class CrudApi {
         } else {
             response.setStatus(HttpServletResponse.SC_CONFLICT);
         }
-    } */
-
     }
+
+}
 
