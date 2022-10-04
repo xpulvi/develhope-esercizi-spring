@@ -2,7 +2,6 @@ package com.noSqlOrm.crud;
 
 import com.noSqlOrm.entity.UserEntity;
 import com.noSqlOrm.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("")
 public class CrudApi {
 
     @Autowired
@@ -24,9 +24,23 @@ public class CrudApi {
     }
 
     //list user
-    @GetMapping
+    @GetMapping("/list")
     public List<UserEntity> getUsers(){
         return userRepository.findAll();
+    }
+
+    //get singol user
+    @GetMapping("/{id}")
+    public Optional<UserEntity> getSigleUser(@PathVariable Long id){
+        //UserEntity user = userRepository.getReferenceById(id);
+        /*@Pasquale inteliji mi a consigliato di meterlo Opzionale.
+         pero non volevo metere Optional sul metodo. */
+        Optional<UserEntity> user = userRepository.findById(id);
+        if(!userRepository.existsById(id)){
+            return null;
+        }else{
+            return user;
+        }
     }
 
     //update
