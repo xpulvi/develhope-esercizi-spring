@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/deploy")
-public class HomeController {
+public class BasicController {
 
     @GetMapping("")
     public int mainEndpoint(){
