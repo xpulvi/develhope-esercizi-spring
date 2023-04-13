@@ -39,8 +39,7 @@ public class Student {
     }
 
     public Student clone(){
-        return new Student()
-                .setName(this.name)
+        return new Student().setName(this.name)
                 .setSurname(this.surname)
                 .setWorking(this.isWorking)
                 .setId(this.id);

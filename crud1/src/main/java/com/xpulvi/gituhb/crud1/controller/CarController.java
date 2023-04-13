@@ -33,8 +33,8 @@ public class CarController {
     /*return a single Car - if the id is not in the db (use existsById()), returns an empty Car
     | prende una singloa car dal lista */
     @GetMapping("/{id}")
-    public Car getSigleCar(@PathVariable Long id){
-        Car car = carIRepository.getReferenceById(id);
+    public Car getSigleCar(@PathVariable long id){
+        Car car = carIRepository.getById(id);
         if(!carIRepository.existsById(id)){
             return null;
         }else{
